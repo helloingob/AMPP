@@ -3,6 +3,8 @@ This program parses [AuxMoney](https://www.auxmoney.com/) project details and tr
 
 This project was inspired by https://github.com/StegSchreck/PP-Auxmoney-Parser. It is rewritten in .NET5, usable on **all** environments and utilizes no additional driver (*Geckodriver*). Furthermore it uses no visual browser component and extracts the data directly from JSON.
 
+*This project is not affiliated with Auxmoney or Portfolio Performance.*
+
 ## Note
 This is currently only for the **GERMAN** language settings for Portfolio Performance! All country specific export settings can be changed at [OutputSettings](https://github.com/helloingob/AMPP/blob/master/AMPP/Data/OutputSettings.cs).
 
