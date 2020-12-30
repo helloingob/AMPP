@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AMPP.Data
+namespace AMPP.Data.Objects
 {
     public class AuxMoneyUnscheduledRate
     {

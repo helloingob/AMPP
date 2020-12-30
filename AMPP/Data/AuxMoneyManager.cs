@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using AMPP.Data.Objects;
 using RestSharp;
 
 namespace AMPP.Data
@@ -36,10 +37,11 @@ namespace AMPP.Data
             {
                 Console.WriteLine("[" + (i + 1) + "/" + detailUrls.Count + "] " + detailUrls[i]);
                 auxMoneyProjects.Add(GetTransactionsFromDetailUrl(detailUrls[i]));
-                
+
                 //Floodprotection
                 Thread.Sleep(new Random().Next(500, 1000));
             }
+
             return auxMoneyProjects;
         }
 

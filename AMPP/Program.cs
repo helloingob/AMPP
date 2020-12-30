@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using AMPP.Data;
 
 namespace AMPP
@@ -16,7 +13,7 @@ namespace AMPP
                 Console.WriteLine("Successfully logged in.");
                 var auxMoneyProjects = auxMoneyManager.Get();
                 Console.WriteLine("---------------------------------------------------");
-                SaveCSV(auxMoneyProjects);
+                CsvHandler.Export(auxMoneyProjects);
             }
             else
             {
@@ -25,23 +22,6 @@ namespace AMPP
 
             Console.WriteLine("===================================================");
             Console.WriteLine("Finished.");
-        }
-
-        private static void SaveCSV(List<AuxMoneyProject> auxMoneyProjects)
-        {
-            var currentDate = DateTime.Now.ToString("ddMMyyyyHHmmss");
-            var csvOutput = "Datum;Wert;Buchungswährung;Typ;Notiz\n";
-            foreach (var csvContent in auxMoneyProjects.Select(auxMoneyProject => auxMoneyProject.ToCsv()))
-                if (!string.IsNullOrEmpty(csvContent))
-                {
-                    csvOutput += csvContent;
-                    Console.WriteLine(csvContent);
-                }
-
-            Console.WriteLine("---------------------------------------------------");
-            var filename = "ampp_" + currentDate + ".txt";
-            File.WriteAllText("ampp_" + currentDate + ".csv", csvOutput);
-            Console.WriteLine("Exported to: " + filename);
         }
     }
 }

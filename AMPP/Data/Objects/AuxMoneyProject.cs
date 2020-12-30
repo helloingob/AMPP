@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace AMPP.Data
+namespace AMPP.Data.Objects
 {
     public class AuxMoneyProject
     {
@@ -28,7 +27,8 @@ namespace AMPP.Data
                               " - (" + currentRate + "/" + _rates.Count + ")" +
                               "\n";
                 if (auxMoneyRate.PayedInterest > 0)
-                    result += FormatRow(auxMoneyRate.Date, auxMoneyRate.PayedInterest, OutputSettings.Interest, Id.ToString()) +
+                    result += FormatRow(auxMoneyRate.Date, auxMoneyRate.PayedInterest, OutputSettings.Interest,
+                                  Id.ToString()) +
                               " - (" + currentRate + "/" + _rates.Count + ")" +
                               "\n";
             }
